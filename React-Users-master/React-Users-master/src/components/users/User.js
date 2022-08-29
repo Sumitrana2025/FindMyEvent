@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const User = () => {
   const [user, setUser] = useState({
-    name: "",
-    username: "",
-    email: "",
-    phone: "",
-    webiste: ""
+    name: '',
+    username: '',
+    email: '',
+    phone: '',
+    webiste: '',
   });
   const { id } = useParams();
   useEffect(() => {
@@ -19,18 +19,18 @@ const User = () => {
     setUser(res.data);
   };
   return (
-    <div className="container py-4">
-      <Link className="btn btn-primary" to="/">
-        back to Home
+    <div className='container py-4'>
+      <Link class='btn-home' to='/'>
+        <i class='fa fa-home'></i> Home
       </Link>
-      <h1 className="display-4">User Id: {id}</h1>
+      <h1 className='display-4'>User Id: {id}</h1>
       <hr />
-      <ul className="list-group w-50">
-        <li className="list-group-item">name: {user.name}</li>
-        <li className="list-group-item">user name: {user.username}</li>
-        <li className="list-group-item">email: {user.email}</li>
-        <li className="list-group-item">phone: {user.phone}</li>
-        <li className="list-group-item">website: {user.website}</li>
+      <ul className='list-group w-50'>
+        <li className='list-group-item'>Event Name: {user.name}</li>
+        <li className='list-group-item'>Description: {user.username}</li>
+        <li className='list-group-item'>Email: {user.email}</li>
+        <li className='list-group-item'>Phone: {user.phone}</li>
+        <li className='list-group-item'>Location: {user.website}</li>
       </ul>
     </div>
   );
